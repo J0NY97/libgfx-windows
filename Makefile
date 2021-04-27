@@ -6,7 +6,7 @@
 #    By: jsalmi <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 15:28:58 by jsalmi            #+#    #+#              #
-#    Updated: 2021/04/26 11:03:30 by jsalmi           ###   ########.fr        #
+#    Updated: 2021/04/27 10:57:44 by jsalmi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS = gfx_new_vector.c \
 	ft_create_circle.c \
 	ft_create_line.c \
 	shit_from_object_thing.c
+
 OBJS = $(SRCS:.c=.o)
 LIBS = libgfx.h
 FLAGS = -Wall -Wextra -Werror
