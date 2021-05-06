@@ -6,15 +6,15 @@
 /*   By: jsalmi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:44:05 by jsalmi            #+#    #+#             */
-/*   Updated: 2021/04/27 10:57:59 by jsalmi           ###   ########.fr       */
+/*   Updated: 2021/05/06 12:35:26 by jsalmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBGFX_H
 # define LIBGFX_H
-# include "../libft-windows/libft.h"
-# include "../better_libui-windows/better_libui.h"
-# include "../ft_printf-windows/ft_printf.h"
+# include "libft.h"
+# include "better_libui.h"
+# include "ft_printf.h"
 # include <math.h>
 
 typedef	struct	s_vector		t_vector;

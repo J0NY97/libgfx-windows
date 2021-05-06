@@ -6,7 +6,7 @@
 #    By: jsalmi <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 15:28:58 by jsalmi            #+#    #+#              #
-#    Updated: 2021/04/27 10:57:44 by jsalmi           ###   ########.fr        #
+#    Updated: 2021/05/06 12:36:12 by jsalmi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,12 +30,12 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(SRCS)
 	@gcc -c $(SRCS) $(FLAGS) \
-		-I ../better_libui-windows \
-		-I ../ft_printf-windows \
-		-I ../libft-windows \
-		-I ../include
+		-I../better_libui \
+		-I../ft_printf \
+		-I../libft \
+		-I../SDL2/includes
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@echo "$(NAME) was successfully created."
