@@ -6,7 +6,7 @@
 /*   By: jsalmi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 11:01:42 by jsalmi            #+#    #+#             */
-/*   Updated: 2021/04/26 11:01:49 by jsalmi           ###   ########.fr       */
+/*   Updated: 2021/05/17 11:58:19 by jsalmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ static inline void	full_or_empty(SDL_Surface *surf, Uint32 color, t_shapes l)
 	if (l.x2 >= w || l.x2 < 0)
 		l.x2 = l.x2 < 0 ? 0 : w - 1;
 	if (l.y2 >= h || l.y2 < 0)
-		l.y2 = l.y2 < 0 ? 0 : h - 1;
+		return ;
+//		l.y2 = l.y2 < 0 ? 0 : h - 1;
 	if (l.x1 >= w || l.x1 < 0)
 		l.x1 = l.x1 < 0 ? 0 : w - 1;
 	if (l.y1 >= h || l.y1 < 0)
-		l.y1 = l.y1 < 0 ? 0 : h - 1;
+		return ;
+//		l.y1 = l.y1 < 0 ? 0 : h - 1;
 	if (l.fill == 1)
 		ft_create_line(surf, color, l);
 	else
