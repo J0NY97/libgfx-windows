@@ -32,10 +32,10 @@ all: $(NAME)
 
 $(NAME): $(SRCS)
 	@gcc -c $(SRCS) $(FLAGS) \
-		-I../better_libui \
-		-I../ft_printf \
 		-I../libft \
-		-I../SDL2/includes
+		-I../better_libui \
+		-I../SDL2/includes \
+		-I../ft_printf
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@echo "$(NAME) was successfully created."
@@ -50,3 +50,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: clean, all, fclean, re
+
