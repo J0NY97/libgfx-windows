@@ -32,6 +32,8 @@ void				gfx_vector_string(t_vector v);
 int					gfx_vector_dot(t_vector curr, t_vector v1, t_vector v2); // should probably return double
 double				gfx_distance(t_vector v1, t_vector v2);
 t_vector			gfx_vector_multiply(t_vector v, int mult);
+t_vector			gfx_vector_add(t_vector v, float n);
+t_vector			gfx_vector_sub(t_vector v, float n);
 
 void				gfx_draw_vector(SDL_Surface *surface, Uint32 color, unsigned int size, t_vector v);
 void				gfx_draw_line(SDL_Surface *surf, Uint32 color, t_vector v1, t_vector v2);
