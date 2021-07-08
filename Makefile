@@ -20,6 +20,7 @@ SRCS = gfx_new_vector.c \
 	gfx_distance.c \
 	gfx_hitbox_square.c \
 	gfx_vector_multiply.c \
+	gfx_vector_divide.c \
 	gfx_vector_add.c \
 	gfx_vector_sub.c \
 	gfx_vector_copy.c \

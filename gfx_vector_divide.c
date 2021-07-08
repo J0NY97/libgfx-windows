@@ -12,10 +12,10 @@
 
 #include "libgfx.h"
 
-t_vector	gfx_vector_multiply(t_vector v, float mult)
+t_vector	gfx_vector_divide(t_vector v, float div)
 {
-	t_vector nv;
+	t_vector	nv;
 
-	nv = gfx_new_vector(v.x * mult, v.y * mult, v.z * mult);
+	nv = gfx_new_vector(v.x / div, v.y / div, v.z / div);
 	return (nv);
 }
