@@ -1,45 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_line.c                                          :+:      :+:    :+:   */
+/*   gfx_draw_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nneronin <nneronin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 16:31:50 by nneronin          #+#    #+#             */
-/*   Updated: 2020/09/26 18:45:41 by jsalmi           ###   ########.fr       */
+/*   Updated: 2021/07/24 19:03:49 by nneronin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libgfx.h"
 
+static inline int sign(float a, float b)
+{
+	if (a < b)
+		return (1);
+	return (-1);
+}
+
+static inline void line_calc(t_vector v1, t_vector v2, int *cath_x, int *cath_y)
+{
+	if ((v1.y - v2.y) < 0)
+		*cath_x = (v1.y - v2.y) * -1;
+	else
+		*cath_x = (v1.y - v2.y);
+	if ((v1.x - v2.x) < 0)
+		*cath_y = (v1.x - v2.x) * -1;
+	else
+		*cath_y = (v1.x - v2.x);
+}
+
 void	gfx_draw_line(SDL_Surface *surf, Uint32 color, t_vector v1, t_vector v2)
 {
 	int			cath_x;
 	int			cath_y;
-	int			x;
-	int			y;
 	int			overflow_x;
 	int			overflow_y;
 
-	cath_x = ((int)v2.y - (int)v1.y) < 0 ? ((int)v2.y - (int)v1.y) * -1 : ((int)v2.y - (int)v1.y);
-	cath_y = ((int)v2.x - (int)v1.x) < 0 ? ((int)v2.x - (int)v1.x) * -1 : ((int)v2.x - (int)v1.x);
+	line_calc(v1, v2, &cath_x, &cath_y);
 	overflow_y = cath_y - cath_x;
-	x = v1.x;
-	y = v1.y;
-	while (x != (int)v2.x || y != (int)v2.y)
+	while (v2.x != v1.x || v2.y != v1.y)
 	{
-		if (!(x < 0 || x >= surf->w || y < 0 || y >= surf->h))
-			set_pixel(surf, x, y, color);
+		set_pixel(surf, v2.x, v2.y, color);
 		overflow_x = overflow_y * 2;
 		if (overflow_x > -(cath_x))
 		{
 			overflow_y -= cath_x;
-			x += x < (int)v2.x ? 1 : -1;
+			v2.x += sign(v2.x, v1.x);
 		}
 		else if (overflow_x < cath_x)
 		{
 			overflow_y += cath_y;
-			y += y < (int)v2.y ? 1 : -1;
+			v2.y += sign(v2.y, v1.y);
 		}
 	}
 }
