@@ -25,8 +25,9 @@ SRCS = gfx_new_vector.c \
 	gfx_vector_sub.c \
 	gfx_vector_copy.c \
 	ft_create_circle.c \
-	ft_create_line.c \
-	shit_from_object_thing.c
+	ft_create_line.c
+
+#	shit_from_object_thing.c
 
 OBJS = $(SRCS:.c=.o)
 LIBS = libgfx.h

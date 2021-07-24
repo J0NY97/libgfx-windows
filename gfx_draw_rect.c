@@ -14,8 +14,12 @@
 
 void	gfx_draw_rect(SDL_Surface *surface, Uint32 color, t_xywh dim)
 {
-	gfx_draw_line(surface, color, (t_vector){dim.x, dim.y, 0}, (t_vector){dim.x + dim.w, dim.y, 0});
-	gfx_draw_line(surface, color, (t_vector){dim.x, dim.y, 0}, (t_vector){dim.x, dim.y + dim.h, 0});
-	gfx_draw_line(surface, color, (t_vector){dim.x + dim.w, dim.y, 0}, (t_vector){dim.x + dim.w, dim.y + dim.h, 0});
-	gfx_draw_line(surface, color, (t_vector){dim.x, dim.y + dim.h, 0}, (t_vector){dim.x + dim.w, dim.y + dim.h, 0});
+	gfx_draw_line(surface, color, (t_vector){dim.x, dim.y, 0},
+		(t_vector){dim.x + dim.w, dim.y, 0});
+	gfx_draw_line(surface, color, (t_vector){dim.x, dim.y, 0},
+		(t_vector){dim.x, dim.y + dim.h, 0});
+	gfx_draw_line(surface, color, (t_vector){dim.x + dim.w, dim.y, 0},
+		(t_vector){dim.x + dim.w, dim.y + dim.h, 0});
+	gfx_draw_line(surface, color, (t_vector){dim.x, dim.y + dim.h, 0},
+		(t_vector){dim.x + dim.w, dim.y + dim.h, 0});
 }

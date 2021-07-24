@@ -14,7 +14,7 @@
 
 t_vector	gfx_vector_multiply(t_vector v, float mult)
 {
-	t_vector nv;
+	t_vector	nv;
 
 	nv = gfx_new_vector(v.x * mult, v.y * mult, v.z * mult);
 	return (nv);

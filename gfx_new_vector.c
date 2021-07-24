@@ -14,7 +14,7 @@
 
 t_vector	gfx_new_vector(double x, double y, double z)
 {
-	t_vector vector;
+	t_vector	vector;
 
 	vector.x = x;
 	vector.y = y;

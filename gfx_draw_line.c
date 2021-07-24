@@ -12,7 +12,7 @@
 
 #include "libgfx.h"
 
-void				gfx_draw_line(SDL_Surface *surf, Uint32 color, t_vector v1, t_vector v2)
+void	gfx_draw_line(SDL_Surface *surf, Uint32 color, t_vector v1, t_vector v2)
 {
 	int			cath_x;
 	int			cath_y;

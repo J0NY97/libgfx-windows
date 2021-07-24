@@ -13,8 +13,12 @@
 
 double	gfx_distance(t_vector v1, t_vector v2)
 {
-	double result;
+	double	result;
 
-	result = sqrt(ft_pow(v1.x - v2.x, 2) + ft_pow(v1.y - v2.y, 2) + ft_pow(v1.z - v2.z, 2));
-	return (result > 0 ? result : -result);
+	result = sqrt(ft_pow(v1.x - v2.x, 2)
+			+ ft_pow(v1.y - v2.y, 2)
+			+ ft_pow(v1.z - v2.z, 2));
+	if (result < 0)
+		result *= -1;
+	return (result);
 }

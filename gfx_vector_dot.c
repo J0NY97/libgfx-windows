@@ -12,12 +12,12 @@
 
 #include "libgfx.h"
 
-int		gfx_vector_dot(t_vector curr, t_vector v1, t_vector v2)
+int	gfx_vector_dot(t_vector curr, t_vector v1, t_vector v2)
 {
-	int v1x;
-	int v1y;
-	int v2x;
-	int v2y;
+	int	v1x;
+	int	v1y;
+	int	v2x;
+	int	v2y;
 	int	dot;
 
 	v1x = curr.x - v1.x;
