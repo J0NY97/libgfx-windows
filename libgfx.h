@@ -13,11 +13,15 @@
 #ifndef LIBGFX_H
 # define LIBGFX_H
 # include "libft.h"
-# include "better_libui.h"
 # include "ft_printf.h"
+# include "SDL.h"
 # include <math.h>
 
 typedef	struct	s_vector		t_vector;
+typedef	struct	s_v2			t_v2;
+typedef	struct	s_v3			t_v3;
+typedef struct	s_v4			t_v4;
+typedef struct	s_xywh			t_xywh;
 
 struct				s_vector
 {
@@ -25,6 +29,47 @@ struct				s_vector
 	double			y;
 	double			z;
 };
+
+struct				s_v2
+{
+	float			x;
+	float			y;
+};
+
+struct				s_v3
+{
+	float			x;
+	float			y;
+	float			z;
+};
+
+struct				s_v4
+{
+	float			x;
+	float			y;
+	float			z;
+	float			w;
+};
+
+struct				s_xywh
+{
+	int				x;
+	int				y;
+	int				w;
+	int				h;
+};
+
+typedef struct s_shapes
+{
+	int			x1;
+	int			y1;
+	int			x2;
+	int			y2;
+	int			fill;
+	int			size;
+	int			color;
+
+}		t_shapes;
 
 t_vector			gfx_new_vector(double x, double y, double z);
 void				gfx_vector_string(t_vector v);
@@ -43,6 +88,8 @@ void				gfx_draw_rect(SDL_Surface *surface, Uint32 color, t_xywh dim);
 void				gfx_raster(SDL_Surface *surf, Uint32 color, int x0, int x1, int y0);
 
 int					gfx_hitbox_square(int x, int y, t_xywh rect);
+
+void				ft_create_circle(SDL_Surface *surf, Uint32 color, t_shapes c);
 
 // Matrix math and vector math.
 
